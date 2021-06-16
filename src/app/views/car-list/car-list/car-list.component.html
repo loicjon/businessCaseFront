@@ -1,0 +1,109 @@
+<app-header></app-header>
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Car List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Car List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Featured car start -->
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <!-- Option bar start -->
+        <div class="option-bar clearfix">
+          <div class="sorting-options2">
+            <span class="sort">Sort by:</span>
+            <select class="selectpicker search-fields" name="default-order">
+              <option>Default Order</option>
+              <option>Price High to Low</option>
+              <option>Price: Low to High</option>
+              <option>Newest Properties</option>
+              <option>Oldest Properties</option>
+            </select>
+          </div>
+          <div class="sorting-options float-right">
+            <a routerLink="/car" class="change-view-btn active-view-btn float-right"><i class="fa fa-th-list"></i></a>
+            <a routerLink="/cargrid" class="change-view-btn float-right"><i class="fa fa-th-large"></i></a>
+          </div>
+        </div>
+        <!-- Car box 2 start -->
+        <div class="car-box-2" *ngFor="let ad of ads | paginate: {
+        itemsPerPage: 6, currentPage: page,
+        totalItems: totalLength
+        }" value="{{ ad.id }}">
+          <div class="row" >
+            <div class="col-lg-4 col-md-5 col-pad">
+              <div class="car-thumbnail">
+                <a href="#" [routerLink]="['/car/', ad.id, 'view']" class="car-img">
+                  <img src="{{ad.feature}}" alt="car" class="img-fluid">
+                  <div class="price-box"> {{ ad.price }}</div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-7 col-pad align-self-center">
+              <div class="detail">
+                <h3 class="title">
+                  <a href="#" [routerLink]="['/car/', ad.id, 'view']"> {{ ad.title }} </a>
+                </h3>
+                <h5 class="location">
+                  <a href="car-details.html">
+                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                  </a>
+                </h5>
+                <ul class="facilities-list clearfix">
+                  <li>
+                    <i class="flaticon-way"></i> {{ ad.mileage }}
+                  </li>
+                  <li>
+                    <i class="flaticon-manual-transmission"></i> Manual
+                  </li>
+                  <li>
+                    <i class="flaticon-calendar-1" ></i> {{ ad.age }}
+                  </li>
+                  <li>
+                    <i class="flaticon-car"></i> Sport
+                  </li>
+                  <li>
+                    <i class="flaticon-gear"></i> Blue
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<form>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="form-group" >
+        <select name="select-brand" >
+          <option>brands </option>
+          <option *ngFor="let ad of ads" value="{{ ad.id }}">{{ ad.price}} </option>
+        </select>
+      </div>
+    </div>
+
+
+  </div>
+
+</form>
+-->
+
+<app-footer></app-footer>

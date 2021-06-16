@@ -1,0 +1,102 @@
+<app-admin-view></app-admin-view>
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Ads List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Ads List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="list row">
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by picture type"
+        [(ngModel)]="pictureName"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchPictureName()"
+        >
+          Search
+        </button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="refreshList()"
+        >
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Pictures List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let picture of pictures | paginate: {
+        itemsPerPage: 6, currentPage: page,
+        totalItems: totalLength
+        }; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActivePicture(picture, i)"
+      >
+        {{ picture.pictureName }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-succes">
+      <a routerLink="/picture/add">Add Picture</a>
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentPicture">
+      <h4>Picture</h4>
+      <div>
+        <label><strong>Picture Name:</strong></label>
+        {{ currentPicture.pictureName }}
+      </div>
+
+      <div>
+        <label><strong>Picture Name:</strong></label>
+        {{ currentPicture.pictureLink }}
+      </div>
+
+
+      <a class="badge badge-warning" routerLink="/pictures/{{ currentPicture.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentPicture">
+      <br />
+      <p>Please click on a Picture...</p>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

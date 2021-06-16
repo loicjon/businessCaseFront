@@ -1,0 +1,44 @@
+<form [formGroup]="carForm" (ngSubmit)="onSubmitSearchCars()">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="form-group" >
+        <select class="form-control" name="brand" formControlName="brand"
+
+                (change)="handleBrandChange($event.target.value)"
+        >
+          <option selected>Select Brand</option>
+          <option *ngFor="let b of brands" [value]=" b.id "> {{ b.brandName }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="form-group">
+        <select class="form-control" name="model" formControlName="model"
+        (change)="modelChange($event.target.value)">
+          <option value='...' selected>...</option>
+          <option *ngFor="let m of models" [value]=" m.id ">{{ m.modelName }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="form-group">
+        <select class="form-control" name="fuel" formControlName="fuel"
+        (change)="fuelChange($event.target.value)">
+          <option>Select Location</option>
+          <option *ngFor="let f of fuels" [value]=" f.id ">{{ f.type }}</option>
+
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+    <div class="form-group">
+      <button class="btn btn-block button-theme btn-md btn btn-danger"
+      type="submit">
+        <i class="fa fa-search"></i>Find
+      </button>
+    </div>
+  </div>
+</form>
+
+

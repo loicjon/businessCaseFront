@@ -1,0 +1,47 @@
+<app-admin-view></app-admin-view>
+
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentPicture" class="edit-form">
+    <h4>Picture</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="pictureName">Picture Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="pictureName"
+          [(ngModel)]="currentPicture.pictureName"
+          name="pictureName"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="pictureLink">Picture Link</label>
+        <input
+          type="text"
+          class="form-control"
+          id="pictureLink"
+          [(ngModel)]="currentPicture.pictureLink"
+          name="pictureLink"
+        />
+      </div>
+
+    </form>
+
+
+    <button class="badge badge-danger mr-2" (click)="deletePicture()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updatePicture()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+</div>

@@ -1,0 +1,93 @@
+
+
+<div class="container">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search Car"
+          [(ngModel)]="title"
+          (keyup.enter)="searchTitle()"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-danger"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Search
+          </button>
+          <button
+            class="btn btn-outline-info"
+            type="button"
+            (click)="refreshList()"
+          >
+            Refresh
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-10 offset-lg-1">
+      <!-- Option bar start -->
+
+      <!-- Car box 2 start -->
+      <div class="car-box-2" *ngFor="let ad of ads | paginate: {
+        itemsPerPage: 6, currentPage: page,
+        totalItems: totalLength
+        }" value="{{ ad.id }}">
+        <div class="row" >
+          <div class="col-lg-4 col-md-5 col-pad">
+            <div class="car-thumbnail">
+              <a href="#" [routerLink]="['/car/', ad.id, 'view']" class="car-img">
+                <img src="{{ad.feature}}" alt="car" class="img-fluid">
+                <div class="price-box"> {{ ad.price }}</div>
+              </a>
+              <div class="carbox-overlap-wrapper" [routerLink]="['/car/', ad.id, 'view']">
+                <div class="overlap-box">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-7 col-pad align-self-center">
+            <div class="detail">
+              <h3 class="title">
+                <a href="#" [routerLink]="['/car/', ad.id, 'view']"> {{ ad.title }} </a>
+              </h3>
+              <h5 class="location">
+                <a href="car-details.html">
+                  <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                </a>
+              </h5>
+              <ul class="facilities-list clearfix">
+                <li>
+                  <i class="flaticon-way"></i> {{ ad.mileage }}
+                </li>
+                <li>
+                  <i class="flaticon-manual-transmission"></i> Manual
+                </li>
+                <li>
+                  <i class="flaticon-calendar-1" ></i> {{ ad.age }}
+                </li>
+                <li>
+                  <i class="flaticon-car"></i> Sport
+                </li>
+                <li>
+                  <i class="flaticon-gear"></i> Blue
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,61 @@
+
+<div class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Form content box start -->
+        <div class="form-content-box">
+          <!-- details -->
+          <div class="details">
+            <!-- Logo-->
+            <a href="index.html">
+              <img src="/assets/img/logos/logo1.png" class="cm-logo" alt="black-logo">
+            </a>
+            <!-- Name -->
+            <h3>Add an model</h3>
+            <!-- Form start-->
+            <div class="submit-form">
+              <div *ngIf="!submitted">
+
+
+
+                <div class="form-group">
+                  <label for="modelName">Model Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="modelName"
+                    required
+                    [(ngModel)]="model.modelName"
+                    name="modelName"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="brand">Brand id</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="brand"
+                    required
+                    [(ngModel)]="model.brand"
+                    name="brand"
+                  />
+                </div>
+
+                <button (click)="saveModel()" class="btn btn-success">Submit</button>
+              </div>
+
+              <div *ngIf="submitted">
+                <h4>You submitted successfully!</h4>
+                <button class="btn btn-success" (click)="newModel()">Add</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Form content box end -->
+      </div>
+    </div>
+  </div>
+</div>

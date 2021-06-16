@@ -1,0 +1,58 @@
+
+<div class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Form content box start -->
+        <div class="form-content-box">
+          <!-- details -->
+          <div class="details">
+            <!-- Logo-->
+            <a href="index.html">
+              <img src="/assets/img/logos/logo1.png" class="cm-logo" alt="black-logo">
+            </a>
+            <!-- Name -->
+            <h3>Add an picture</h3>
+            <!-- Form start-->
+            <div class="submit-form">
+              <div *ngIf="!submitted">
+                <div class="form-group">
+                  <label for="pictureName">Picture Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pictureName"
+                    required
+                    [(ngModel)]="picture.pictureName"
+                    name="pictureName"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="pictureLink">Picture Link</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="pictureLink"
+                    required
+                    [(ngModel)]="picture.pictureLink"
+                    name="pictureLink"
+                  />
+                </div>
+
+                <button (click)="savePicture()" class="btn btn-success">Submit</button>
+              </div>
+
+              <div *ngIf="submitted">
+                <h4>You submitted successfully!</h4>
+                <button class="btn btn-success" (click)="newPicture()">Add</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Form content box end -->
+      </div>
+    </div>
+  </div>
+</div>

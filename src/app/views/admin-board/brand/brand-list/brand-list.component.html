@@ -1,0 +1,92 @@
+<app-admin-view></app-admin-view>
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Ads List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Brands List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="list row">
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Brand name"
+        [(ngModel)]="brandName"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchBrandName()"
+        >
+          Search
+        </button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="refreshList()"
+        >
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Brands List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let brand of brands; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveBrand(brand, i)"
+      >
+        {{ brand.brandName }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-succes">
+      <a routerLink="/brand/add">Add Brand</a>
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentBrand">
+      <h4>Brand</h4>
+      <div>
+        <label><strong>Brand Name:</strong></label>
+        {{ currentBrand.brandName }}
+      </div>
+
+
+      <a class="badge badge-warning" routerLink="/brands/{{ currentBrand.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentBrand">
+      <br />
+      <p>Please click on a Brand...</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

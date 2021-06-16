@@ -1,0 +1,31 @@
+.sub-banner {
+  background: rgba(0, 0, 0, 0.04) url(https://img.autoplus.fr/news/2016/05/26/1504969/900%7C600%7C93b40eb156f6eccba4229f52.jpg) top left repeat;
+  background-size: cover;
+  height: 360px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.counters {
+  padding: 80px 0 40px;
+  background: url(https://www.votreconciergerie.com/assets/img/background/votre-conciergerie-prestation-services-proprietaire.jpg);
+  z-index: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@media (max-width: 992px) {
+  .counters {
+    padding: 80px 0 40px;
+    background: url(https://www.directeurinformatique.com/wp-content/uploads/2014/04/pilotage-entreprise.jpg);
+    z-index: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

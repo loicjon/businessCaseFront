@@ -1,0 +1,264 @@
+<app-header ></app-header>
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Car Details</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Car Details</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Car details page start -->
+<div class="car-details-page content-area-6">
+  <div class="container">
+    <div class="row" >
+      <div class="col-lg-8 col-md-12 col-xs-12">
+        <div class="car-details-section">
+          <div id="carDetailsSlider" class="carousel car-details-sliders slide mb-40">
+            <!-- main slider carousel items -->
+            <div class="carousel-inner">
+              <div class="active item carousel-item" data-slide-number="0">
+                <img src="{{ ad.feature }}" class="img-fluid" alt="slider-car">
+              </div>
+              <div class="item carousel-item" data-slide-number="1">
+                <img src="http://placehold.it/750x500" class="img-fluid" alt="slider-car">
+              </div>
+              <div class="item carousel-item" data-slide-number="2">
+                <img src="http://placehold.it/750x500" class="img-fluid" alt="slider-car">
+              </div>
+              <div class="item carousel-item" data-slide-number="4">
+                <img src="http://placehold.it/750x500" class="img-fluid" alt="slider-car">
+              </div>
+              <div class="item carousel-item" data-slide-number="5">
+                <img src="http://placehold.it/750x500" class="img-fluid" alt="slider-car">
+              </div>
+            </div>
+            <!-- main slider carousel nav controls -->
+
+            <div class="heading-car-2">
+              <h3>{{ ad.title }}</h3>
+              <div class="price-location"><span class="car-price" style="color:#B8000B">{{ ad.price }}</span> <span class="rent">For Sale</span></div>
+            </div>
+          </div>
+          <!-- Advanced search start -->
+          <div class="widget-2 advanced-search bg-grea-2 d-lg-none d-xl-none">
+            <h3 class="sidebar-title">Booking This Car</h3>
+            <ul>
+              <li>
+                <span>Make</span> <p>{{ ad.title }}</p>
+              </li>
+              <li>
+                <span>Model</span>Maxima
+              </li>
+              <li>
+                <span>Body Style</span>Convertible
+              </li>
+              <li>
+                <span>Year</span>2017
+              </li>
+              <li>
+                <span>Condition</span>Brand New
+              </li>
+              <li>
+                <span>Mileage</span>34,000 mi
+              </li>
+              <li>
+                <span>Interior Color</span>Dark Grey
+              </li>
+              <li>
+                <span>Transmission</span>6-speed Manual
+              </li>
+              <li>
+                <span>Engine</span>3.4L Mid-Engine V6
+              </li>
+              <li>
+                <span>No. of Gears:</span>5
+              </li>
+              <li>
+                <span>Location</span>Toronto
+              </li>
+              <li>
+                <span>Fuel Type</span>Gasoline Fuel
+              </li>
+            </ul>
+          </div>
+          <!-- Tabbing box start -->
+          <div class="tabbing tabbing-box mb-40">
+            <ul class="nav nav-tabs" id="carTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active show" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one" aria-selected="false">Description</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="6-tab" data-toggle="tab" href="#6" role="tab" aria-controls="6" aria-selected="true">Specifications</a>
+              </li>
+
+            </ul>
+            <div class="tab-content" id="carTabContent">
+              <div class="tab-pane fade active show" id="one" role="tabpanel" aria-labelledby="one-tab">
+                <div class="car-description mb-50">
+                  <h3 class="heading-2">
+                    Description
+                  </h3>
+                  <p> {{ ad.generalDescription}}</p>
+                </div>
+              </div>
+
+              <div class="tab-pane fade " id="6" role="tabpanel" aria-labelledby="6-tab">
+                <div class="car-amenities mb-30">
+                  <h3 class="heading-2">Specifications</h3>
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <ul class="amenities">
+                        <li>
+                          <i class="fa fa-check"></i>Top Speed: 270
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Fuel Type: Diesel
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Mileage: 35,200 KM
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Engine: 2901
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Gear: 4
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <ul class="amenities">
+                        <li>
+                          <i class="fa fa-check"></i>Drive Train: Front Wheel
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Body Style: Sedan
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Year:2019
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Fuel Type: Diesel
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Interior Color: White
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                      <ul class="amenities">
+                        <li>
+                          <i class="fa fa-check"></i>Doors: 4
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Horse Power: 310
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Location: Florisa, USA
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Interior Color: Black
+                        </li>
+                        <li>
+                          <i class="fa fa-check"></i>Security
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- Contact 2 start -->
+          <div class="contact-2 ca mb-50">
+            <h3 class="heading">Contact Form</h3>
+            <form action="#" method="GET" enctype="multipart/form-data">
+              <div class="row">
+                <div class="form-group name col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group email col-md-6">
+                  <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group number col-md-6">
+                  <input type="text" name="phone" class="form-control" placeholder="Number">
+                </div>
+                <div class="form-group number col-md-6">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject">
+                </div>
+                <div class="form-group message col-md-12">
+                  <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                </div>
+                <div class="send-btn col-md-12">
+                  <button type="submit" class="btn btn-danger button-theme">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="sidebar-right">
+          <!-- Advanced search start -->
+          <div class="widget advanced-search d-none d-xl-block d-lg-block">
+            <h3 class="sidebar-title">Booking This Car</h3>
+            <ul>
+              <li>
+                <span>Make</span>{{ ad.title }}
+              </li>
+              <li>
+                <span>Model</span>Maxima
+              </li>
+              <li>
+                <span>Body Style</span>Convertible
+              </li>
+              <li>
+                <span>Year</span>{{ad.age}}
+              </li>
+              <li>
+                <span>Condition</span>Brand New
+              </li>
+              <li>
+                <span>Mileage</span>{{ad.mileage}} Km
+              </li>
+              <li>
+                <span>Interior Color</span>Dark Grey
+              </li>
+              <li>
+                <span>Transmission</span>6-speed Manual
+              </li>
+              <li>
+                <span>Engine</span>3.4L Mid-Engine V6
+              </li>
+              <li>
+                <span>No. of Gears:</span>5
+              </li>
+              <li>
+                <span>Location</span>Toronto
+              </li>
+              <li>
+                <span>Fuel Type</span>Gasoline Fuel
+              </li>
+            </ul>
+          </div>
+          <!-- Recent posts start -->
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Car details page end -->
+
+<app-footer></app-footer>

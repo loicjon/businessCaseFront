@@ -1,0 +1,99 @@
+
+<div class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Form content box start -->
+        <div class="form-content-box">
+          <!-- details -->
+          <div class="details">
+            <!-- Logo-->
+            <a href="index.html">
+              <img src="img/black-logo.png" class="cm-logo" alt="black-logo">
+            </a>
+            <!-- Name -->
+            <h3>Add an Professional</h3>
+            <!-- Form start-->
+            <div class="submit-form">
+              <div *ngIf="!submitted">
+
+
+
+                <div class="form-group">
+                  <label for="corporateName">Professional name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="corporateName"
+                    required
+                    [(ngModel)]="professional.corporateName"
+                    name="corporateName"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="mail">Mail</label>
+                  <input
+                    class="form-control"
+                    id="mail"
+                    required
+                    [(ngModel)]="professional.mail"
+                    name="mail"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="phone"
+                    required
+                    [(ngModel)]="professional.phone"
+                    name="phone"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="siretNumer">Siret Number</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="siretNumer"
+                    required
+                    [(ngModel)]="professional.siretNumer"
+                    name="siretNumer"
+                  />
+                </div>
+
+
+                <div class="form-group">
+                  <label for="user">User Id</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="user"
+                    required
+                    [(ngModel)]="professional.user"
+                    name="user"
+                  />
+                </div>
+
+
+
+                <button (click)="saveProfessional()" class="btn btn-success">Submit</button>
+              </div>
+
+              <div *ngIf="submitted">
+                <h4>You submitted successfully!</h4>
+                <button class="btn btn-success" (click)="newProfessional()">Add</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Form content box end -->
+      </div>
+    </div>
+  </div>
+</div>

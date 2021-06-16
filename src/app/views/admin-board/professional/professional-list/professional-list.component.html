@@ -1,0 +1,112 @@
+<app-admin-view></app-admin-view>
+
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Professionals List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Professionals List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="list row">
+
+          <div class="col-md-8">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search by corporate name"
+                [(ngModel)]="corporateName"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="searchCorporateName()"
+                >
+                  Search
+                </button>
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  (click)="refreshList()"
+                >
+                  Refresh
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h4>Professionals List</h4>
+            <ul class="list-group">
+              <li
+                class="list-group-item"
+                *ngFor="let professional of professionals
+        | paginate: {
+        itemsPerPage: 4, currentPage: page,
+        totalItems: totalLength
+        }; let i = index"
+                [class.active]="i == currentIndex"
+                (click)="setActiveProfessional(professional, i)"
+              >
+                {{ professional.corporateName }}
+              </li>
+            </ul>
+
+            <button class="m-3 btn btn-sm btn-succes">
+              <a routerLink="/professional/add">Add Corporate </a>
+            </button>
+          </div>
+          <div class="col-md-6">
+            <div *ngIf="currentProfessional">
+              <h4>Professional</h4>
+              <div>
+                <label><strong>Professional name:</strong></label>
+                {{ currentProfessional.corporateName }}
+              </div>
+              <div>
+                <label><strong>Mail:</strong></label>
+                {{ currentProfessional.mail }}
+              </div>
+
+              <div>
+                <label><strong>Phone:</strong></label>
+                {{ currentProfessional.phone }}
+              </div>
+
+              <div>
+                <label><strong>Siret Number:</strong></label>
+                {{ currentProfessional.siretNumer }}
+              </div>
+
+
+              <a class="badge badge-warning" routerLink="/professionals/{{ currentProfessional.id }}">
+                Edit
+              </a>
+            </div>
+
+            <div *ngIf="!currentProfessional">
+              <br />
+              <p>Please click on a Professional...</p>
+            </div>
+          </div>
+        </div>
+
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+      </div>
+    </div>
+  </div>
+</div>

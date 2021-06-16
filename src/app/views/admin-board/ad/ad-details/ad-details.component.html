@@ -1,0 +1,103 @@
+<app-admin-view></app-admin-view>
+
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentAd" class="edit-form">
+    <h4>Ad</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Ad title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentAd.title"
+          name="title"
+        />
+
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="text"
+          class="form-control"
+          id="price"
+          [(ngModel)]="currentAd.price"
+          name="price"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input
+          type="text"
+          class="form-control"
+          id="age"
+          [(ngModel)]="currentAd.age"
+          name="age"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="mileage">Mileage</label>
+        <input
+          type="text"
+          class="form-control"
+          id="mileage"
+          [(ngModel)]="currentAd.mileage"
+          name="mileage"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="adPostingDate">Ad posting Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="adPostingDate"
+          [(ngModel)]="currentAd.adPostingDate"
+          name="adPostingDate"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="generalDescription">General description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="generalDescription"
+          [(ngModel)]="currentAd.generalDescription"
+          name="generalDescription"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="feature">feature</label>
+        <input
+          type="text"
+          class="form-control"
+          id="feature"
+          [(ngModel)]="currentAd.feature"
+          name="feature"
+        />
+      </div>
+
+    </form>
+
+
+    <button class="badge badge-danger mr-2" (click)="deleteAd()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateAd()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+</div>
+

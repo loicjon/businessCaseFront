@@ -1,0 +1,110 @@
+
+.foot-wrapper {
+  background: #1c2931;
+  padding-top: 21px;
+  padding-bottom: 86px;
+  color: #1c2931;
+  font-size: 12px;
+}
+
+.bloc-droit {
+  float: right;
+  text-align: right;
+}
+
+.bloc-gauche {
+  float: left;
+}
+
+.socialwrapper {
+  display: block;
+}
+
+.menuwrapper {
+  display: block;
+  padding-top: 10px;
+}
+
+.social2 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social2 li {
+  display: inline-block;
+  margin: 0px 0 10px 10px;
+}
+
+.socialwrapper .social2 li a {
+  display: block;
+  text-decoration: none;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  line-height: 16px;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.menuwrapper2 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuwrapper2 li {
+  display: inline-block;
+  margin: 0px 0 10px 10px;
+}
+
+.menuwrapper2 li a {
+  display: block;
+  text-decoration: none;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+.logowrapper {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+}
+
+.logowrapper a {
+  color: #666666;
+  text-decoration: underline;
+  outline: none;
+}
+
+.logowrapper a img {
+  height: 80px;
+}
+
+.copyrights {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 35px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+
+  .logowrapper a img {
+    display: none;
+  }
+
+  footer {
+    padding-top: 0;
+  }
+}

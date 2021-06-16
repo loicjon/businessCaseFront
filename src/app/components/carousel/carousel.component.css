@@ -1,0 +1,12 @@
+.desk-img {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .desk-img {
+    display: none !important;
+  }
+  .mobile-img {
+    display: block;
+  }
+}

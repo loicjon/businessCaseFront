@@ -1,0 +1,23 @@
+
+
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3 style="text-align: center">
+      <strong style="color:#B8000B">{{ currentUser.username }}</strong> Profile
+    </h3>
+
+  </header>
+
+  <h3 style="text-align: center">
+  <strong>Roles:</strong>
+  </h3>
+  <ul>
+    <li *ngFor="let role of currentUser.roles" style="color:#B8000B; text-align: center">
+      {{ role }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

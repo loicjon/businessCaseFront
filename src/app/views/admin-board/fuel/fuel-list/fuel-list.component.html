@@ -1,0 +1,92 @@
+<app-admin-view></app-admin-view>
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Ads List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Ads List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="list row">
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by fuel type"
+        [(ngModel)]="type"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchFuelType()"
+        >
+          Search
+        </button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="refreshList()"
+        >
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Fuels List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let fuel of fuels; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveFuel(fuel, i)"
+      >
+        {{ fuel.type }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-succes">
+      <a routerLink="/fuel/add">Add Fuel</a>
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentFuel">
+      <h4>Fuel</h4>
+      <div>
+        <label><strong>Fuel Type:</strong></label>
+        {{ currentFuel.type }}
+      </div>
+
+
+      <a class="badge badge-warning" routerLink="/fuels/{{ currentFuel.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentFuel">
+      <br />
+      <p>Please click on a Fuel...</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

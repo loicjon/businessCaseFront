@@ -1,0 +1,126 @@
+<app-admin-view></app-admin-view>
+
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Ads List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Ads List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+      <div class="list row">
+
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="refreshList()"
+        >
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h4>Ads List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ad of ads
+        | paginate: {
+        itemsPerPage: 6, currentPage: page,
+        totalItems: totalLength
+        }; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveAd(ad, i)"
+      >
+        {{ ad.title }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-succes">
+      <a routerLink="/ad/add">Add Title </a>
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentAd">
+      <h4>Ad</h4>
+      <div>
+        <label><strong>Ad title:</strong></label>
+        {{ currentAd.title }}
+      </div>
+      <div>
+        <label><strong>Price:</strong></label>
+        {{ currentAd.price }}
+      </div>
+
+      <div>
+        <label><strong>Age:</strong></label>
+        {{ currentAd.age }}
+      </div>
+
+      <div>
+        <label><strong>Mileage:</strong></label>
+        {{ currentAd.mileage }}
+      </div>
+
+      <div>
+        <label><strong>Ad posting date:</strong></label>
+        {{ currentAd.adPostingDate }}
+      </div>
+
+      <div>
+        <label><strong>General Description:</strong></label>
+        {{ currentAd.generalDescription }}
+      </div>
+
+      <div>
+        <label><strong>Feature:</strong></label>
+        {{ currentAd.feature }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/ads/{{ currentAd.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentAd">
+      <br />
+      <p>Please click on a Ad...</p>
+    </div>
+  </div>
+</div>
+
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+      </div>
+    </div>
+  </div>
+</div>

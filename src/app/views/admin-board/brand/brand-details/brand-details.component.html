@@ -1,0 +1,36 @@
+<app-admin-view></app-admin-view>
+
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentBrand" class="edit-form">
+    <h4>Brand</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="brandName">Brand Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandName"
+          [(ngModel)]="currentBrand.brandName"
+          name="brandName"
+        />
+      </div>
+
+    </form>
+
+
+    <button class="badge badge-danger mr-2" (click)="deleteBrand()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateBrand()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+</div>

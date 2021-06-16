@@ -1,0 +1,120 @@
+<app-admin-view></app-admin-view>
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Garages List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Garages List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+
+
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by garage name"
+        [(ngModel)]="garageName"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchGarageName()"
+        >
+          Search
+        </button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="refreshList()"
+        >
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Garages List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let garage of garages; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveGarage(garage, i)"
+      >
+        {{ garage.garageName }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-succes">
+      <a routerLink="/garage/add">Add Garage</a>
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentGarage">
+      <h4>Garage</h4>
+      <div>
+        <label><strong>Garage Name:</strong></label>
+        {{ currentGarage.garageName }}
+      </div>
+      <div>
+        <label><strong>Mail:</strong></label>
+        {{ currentGarage.mail }}
+      </div>
+
+      <div>
+        <label><strong>phone:</strong></label>
+        {{ currentGarage.phone }}
+      </div>
+
+      <div>
+        <label><strong>address:</strong></label>
+        {{ currentGarage.address }}
+      </div>
+
+      <div>
+        <label><strong>postal code:</strong></label>
+        {{ currentGarage.postalCode }}
+      </div>
+
+      <div>
+        <label><strong>Town:</strong></label>
+        {{ currentGarage.town }}
+      </div>
+
+      <div>
+        <label><strong>Country:</strong></label>
+        {{ currentGarage.country }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/garages/{{ currentGarage.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentGarage">
+      <br />
+      <p>Please click on a Garage...</p>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>

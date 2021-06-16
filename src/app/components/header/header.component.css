@@ -1,0 +1,28 @@
+.navbar-brand img {
+  height: 85px;
+}
+
+@media (max-width: 992px){
+  .navbar-toggler {
+    padding: 0;
+    width: 34px;
+    height: 35px;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  .navbar-light .navbar-toggler {
+    background: #B8000B;
+  }
+
+  .navbar-light .navbar-toggler {
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .navbar-brand img{
+    height: 49px;
+  }
+
+}

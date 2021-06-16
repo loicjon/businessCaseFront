@@ -1,0 +1,14 @@
+.sub-banner {
+  background: rgba(0, 0, 0, 0.04) url(https://sf1.sportauto.fr/wp-content/uploads/sportauto/2020/11/Mercedes_Classe_S_Cabriolet_AMG_2017_88657.jpg) top left repeat;
+  background-size: cover;
+  height: 360px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background: #B8000B;
+}

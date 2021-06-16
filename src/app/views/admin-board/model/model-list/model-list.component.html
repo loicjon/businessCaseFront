@@ -1,0 +1,97 @@
+<app-admin-view></app-admin-view>
+
+<div class="sub-banner">
+  <div class="container breadcrumb-area">
+    <div class="breadcrumb-areas">
+      <h1>Ads List</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Admin
+        </a></li>
+        <li class="active">Ads List</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured-car content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="list row">
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by model Name"
+        [(ngModel)]="modelName"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchModelName()"
+        >
+          Search
+        </button>
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="refreshList()"
+        >
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Models List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let model of models | paginate: {
+        itemsPerPage: 6, currentPage: page,
+        totalItems: totalLength
+        }; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveModel(model, i)"
+      >
+        {{ model.modelName }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-succes">
+      <a routerLink="/model/add">Add Model</a>
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentModel">
+      <h4>Model</h4>
+      <div>
+        <label><strong>Model Name:</strong></label>
+        {{ currentModel.modelName }}
+      </div>
+
+
+      <a class="badge badge-warning" routerLink="/models/{{ currentModel.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentModel">
+      <br />
+      <p>Please click on a Model...</p>
+    </div>
+  </div>
+</div>
+
+          <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

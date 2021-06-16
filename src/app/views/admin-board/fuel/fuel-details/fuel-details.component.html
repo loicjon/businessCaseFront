@@ -1,0 +1,37 @@
+<app-admin-view></app-admin-view>
+
+<div style="width: 400px; margin: auto;">
+  <div *ngIf="currentFuel" class="edit-form">
+    <h4>Fuel</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="type">Fuel Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="type"
+          [(ngModel)]="currentFuel.type"
+          name="type"
+        />
+      </div>
+
+    </form>
+
+
+    <button class="badge badge-danger mr-2" (click)="deleteFuel()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success"
+      (click)="updateFuel()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+</div>
+
